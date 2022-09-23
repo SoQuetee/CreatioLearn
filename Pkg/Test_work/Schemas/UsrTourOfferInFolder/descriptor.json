@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "a6ef28c0-cd5f-44b6-bb34-f434e5c03b2f",
+    "Name": "UsrTourOfferInFolder",
+    "ModifiedOnUtc": "\/Date(1663833332000)\/",
+    "Parent": {
+      "UId": "4f63bafb-e9e7-4082-b92e-66b97c14017c",
+      "Name": "BaseItemInFolder"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Турпредложения в группе",
+    "DependsOn": []
+  }
+}

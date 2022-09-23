@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "881b3ad8-53cc-49e4-a8c8-88fc141383a0",
+    "Name": "UsrTourOfferInTag",
+    "ModifiedOnUtc": "\/Date(1663833339000)\/",
+    "Parent": {
+      "UId": "5894a2b0-51d5-419a-82bb-238674634270",
+      "Name": "BaseEntityInTag"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Тег в записи раздела Турпредложения",
+    "DependsOn": []
+  }
+}

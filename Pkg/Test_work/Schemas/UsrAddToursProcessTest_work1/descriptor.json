@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "c099b188-52f2-4736-8444-6d1f5e09b762",
+    "Name": "UsrAddToursProcessTest_work1",
+    "ModifiedOnUtc": "\/Date(1663854311000)\/",
+    "Parent": {
+      "UId": "4920c616-f6b9-4768-8c33-d8362d7a0942",
+      "Name": "UsrAddToursProcess"
+    },
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Бизнес-процесс 1",
+    "DependsOn": []
+  }
+}

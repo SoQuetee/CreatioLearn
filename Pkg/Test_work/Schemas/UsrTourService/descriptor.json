@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "4e506be7-9e09-4266-887e-e094cae68ae3",
+    "Name": "UsrTourService",
+    "ModifiedOnUtc": "\/Date(1663856563000)\/",
+    "ManagerName": "SourceCodeSchemaManager",
+    "Caption": "TourService",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "4920c616-f6b9-4768-8c33-d8362d7a0942",
+    "Name": "UsrAddToursProcess",
+    "ModifiedOnUtc": "\/Date(1663854834000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Бизнес-процесс 1",
+    "DependsOn": []
+  }
+}

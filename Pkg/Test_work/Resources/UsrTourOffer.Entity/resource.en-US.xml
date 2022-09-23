@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Турпредложения" />
+			<Item Name="Columns.UsrName.Caption" Value="Name" />
+			<Item Name="Columns.UsrNotes.Caption" Value="Notes" />
+			<Item Name="Columns.UsrTourOfferCode.Caption" Value="Код" />
+			<Item Name="Columns.UsrTourOfferComment.Caption" Value="Комментарий" />
+			<Item Name="Columns.UsrTourOfferEmployee.Caption" Value="Ответственный" />
+			<Item Name="Columns.UsrTourOfferFrequency.Caption" Value="Переодичность" />
+			<Item Name="Columns.UsrTourOfferIsActive.Caption" Value="Активно" />
+			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "b204d634-e5e5-40fb-ac9b-c9203c26aece",
+    "Name": "UsrTourOffer1Page",
+    "ModifiedOnUtc": "\/Date(1663853948000)\/",
+    "Parent": {
+      "UId": "d62293c0-7f14-44b1-b547-735fb40499cd",
+      "Name": "BaseModulePageV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Страница редактирования: \"Турпредложения\"",
+    "DependsOn": []
+  }
+}

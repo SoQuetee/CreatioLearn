@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "2102c2c5-568b-43b3-b36e-70079cb78965",
+    "Name": "UsrSchema998bd676Detail",
+    "ModifiedOnUtc": "\/Date(1663833726000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Тур",
+    "DependsOn": []
+  }
+}
