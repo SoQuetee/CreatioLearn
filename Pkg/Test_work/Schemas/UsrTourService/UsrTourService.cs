@@ -12,7 +12,7 @@
 
     [ServiceContract]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
-    public class UsrTourService: BaseService
+    public class TourService: BaseService
     {
 
         [OperationContract]
