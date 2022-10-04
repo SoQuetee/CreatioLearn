@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="sv-SE">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Счета" />
+			<Item Name="Columns.LrnName.Caption" Value="Namn" />
+			<Item Name="Columns.LrnNotes.Caption" Value="Anteckningar" />
+		</Items>
+	</Group>
+</Resources>

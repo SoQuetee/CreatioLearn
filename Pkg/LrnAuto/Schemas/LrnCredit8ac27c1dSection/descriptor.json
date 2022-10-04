@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "f1935ac2-acd1-4ef7-b4e3-e191db34a656",
+    "Name": "LrnCredit8ac27c1dSection",
+    "ModifiedOnUtc": "\/Date(1664532960000)\/",
+    "Parent": {
+      "UId": "7912fb69-4fee-429f-8b23-93943c35d66d",
+      "Name": "BaseSectionV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема раздела: \"Кредитные программы\""
+  }
+}

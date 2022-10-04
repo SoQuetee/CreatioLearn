@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "8dd89ea2-e5e9-4282-b3a5-2c41004d8cbf",
+    "Name": "LrnAgreementFile",
+    "ModifiedOnUtc": "\/Date(1664368857000)\/",
+    "Parent": {
+      "UId": "556c5867-60a7-4456-aae1-a57a122bef70",
+      "Name": "File"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Файл и ссылка объекта Договоры"
+  }
+}

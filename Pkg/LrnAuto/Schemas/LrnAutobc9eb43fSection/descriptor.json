@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "c58ce73d-80d1-490d-b426-73bbe2646468",
+    "Name": "LrnAutobc9eb43fSection",
+    "ModifiedOnUtc": "\/Date(1664364745000)\/",
+    "Parent": {
+      "UId": "7912fb69-4fee-429f-8b23-93943c35d66d",
+      "Name": "BaseSectionV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема раздела: \"Автомобили\""
+  }
+}

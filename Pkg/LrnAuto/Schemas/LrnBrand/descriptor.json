@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "8009058c-07f8-4c1b-bf95-aad58bbf42c4",
+    "Name": "LrnBrand",
+    "ModifiedOnUtc": "\/Date(1664525556000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Марки автомобилей"
+  }
+}

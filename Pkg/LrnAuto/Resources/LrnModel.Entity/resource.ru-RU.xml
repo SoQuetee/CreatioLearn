@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Модели автомобилей" />
+			<Item Name="Columns.LrnBrand.Caption" Value="Бренд" />
+			<Item Name="Columns.LrnColor.Caption" Value="Цвет" />
+			<Item Name="Columns.LrnDetails.Caption" Value="Комплектация" />
+			<Item Name="Columns.LrnRecommendedAmount.Caption" Value="Стоимость" />
+			<Item Name="Columns.LrnVolume.Caption" Value="Объем двигателя" />
+			<Item Name="Columns.LrnYear.Caption" Value="Год выпуска" />
+			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
+		</Items>
+	</Group>
+</Resources>

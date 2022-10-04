@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "e2753ea8-7d01-4ac0-9ecb-c74dfb0c3bb4",
+    "Name": "LrnInvoiceType",
+    "ModifiedOnUtc": "\/Date(1664371914000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Типы счета"
+  }
+}

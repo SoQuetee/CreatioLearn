@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Счета" />
+			<Item Name="Columns.LrnAgreement.Caption" Value="Договор" />
+			<Item Name="Columns.LrnAmount.Caption" Value="Сумма" />
+			<Item Name="Columns.LrnDate.Caption" Value="Дата" />
+			<Item Name="Columns.LrnFact.Caption" Value="Оплачен" />
+			<Item Name="Columns.LrnInvoiceType.Caption" Value="Тип счета" />
+			<Item Name="Columns.LrnName.Caption" Value="Название" />
+			<Item Name="Columns.LrnNotes.Caption" Value="Заметки" />
+			<Item Name="Columns.LrnPayDate.Caption" Value="Дата оплаты" />
+			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "d9a77d8b-32cb-4fb3-b478-9b3166232e5d",
+    "Name": "LrnCredit1Page",
+    "ModifiedOnUtc": "\/Date(1664800748000)\/",
+    "Parent": {
+      "UId": "a920056c-595b-44bb-9ccf-4d448b5163cf",
+      "Name": "LrnCredit1Page"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Кредитные программы"
+  }
+}

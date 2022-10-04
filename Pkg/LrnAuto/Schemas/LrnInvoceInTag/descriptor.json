@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "969f4157-1032-4bc0-915f-db58cc6a6aec",
+    "Name": "LrnInvoceInTag",
+    "ModifiedOnUtc": "\/Date(1664371434000)\/",
+    "Parent": {
+      "UId": "5894a2b0-51d5-419a-82bb-238674634270",
+      "Name": "BaseEntityInTag"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Тег в записи раздела Счета"
+  }
+}

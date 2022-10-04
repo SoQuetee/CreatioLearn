@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "92361f6b-65c0-4586-bd57-1f9812acc772",
+    "Name": "LrnInvoce1Page",
+    "ModifiedOnUtc": "\/Date(1664790978000)\/",
+    "Parent": {
+      "UId": "d62293c0-7f14-44b1-b547-735fb40499cd",
+      "Name": "BaseModulePageV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Страница редактирования: \"Счета\""
+  }
+}

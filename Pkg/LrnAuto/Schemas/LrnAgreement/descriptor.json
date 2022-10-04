@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "a8d0623c-9a31-4529-b94f-32f85892fe1b",
+    "Name": "LrnAgreement",
+    "ModifiedOnUtc": "\/Date(1664522945000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Договоры"
+  }
+}

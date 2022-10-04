@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "3b04ce17-3e92-f5c4-ca05-512c6becf08b",
+    "Name": "LrnAutoScripts",
+    "ModifiedOnUtc": "\/Date(1664451303000)\/",
+    "Maintainer": "Customer",
+    "DependsOn": [
+      {
+        "UId": "dd7fdd4f-29b2-95df-7950-029b3eaa63b0",
+        "Name": "LrnAuto"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "43ca52fa-cae8-4fbb-a2ce-e946f9e16ac7",
+    "Name": "LrnAuto",
+    "ModifiedOnUtc": "\/Date(1664368189000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Автомобили"
+  }
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "d1d88e8e-9249-445b-b39d-e529d51345aa",
+    "Name": "LrnAuto1Page",
+    "ModifiedOnUtc": "\/Date(1664785986000)\/",
+    "Parent": {
+      "UId": "040bb2ec-9910-4f5c-b4bf-7847448a239e",
+      "Name": "LrnAuto1Page"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Автомобили"
+  }
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "f4cbd6d0-051b-4098-9e01-f76b62314744",
+    "Name": "LrnAgreementInFolder",
+    "ModifiedOnUtc": "\/Date(1664368866000)\/",
+    "Parent": {
+      "UId": "4f63bafb-e9e7-4082-b92e-66b97c14017c",
+      "Name": "BaseItemInFolder"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Договоры в группе"
+  }
+}

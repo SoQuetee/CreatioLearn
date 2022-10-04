@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Кредитные программы" />
+			<Item Name="Columns.LrnCreditPeriod.Caption" Value="Срок кредита" />
+			<Item Name="Columns.LrnDateEnd.Caption" Value="Дата окончания" />
+			<Item Name="Columns.LrnDateStart.Caption" Value="Дата начала" />
+			<Item Name="Columns.LrnNotes.Caption" Value="Заметки" />
+			<Item Name="Columns.LrnPercent.Caption" Value="Ставка в год" />
+			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
+		</Items>
+	</Group>
+</Resources>

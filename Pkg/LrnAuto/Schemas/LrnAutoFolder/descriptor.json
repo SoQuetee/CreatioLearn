@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "53be99a5-aa37-41b4-a6a3-0a73cb1d75c8",
+    "Name": "LrnAutoFolder",
+    "ModifiedOnUtc": "\/Date(1664364766000)\/",
+    "Parent": {
+      "UId": "d602bf96-d029-4b07-9755-63c8f5cb5ed5",
+      "Name": "BaseFolder"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Группа Автомобили"
+  }
+}

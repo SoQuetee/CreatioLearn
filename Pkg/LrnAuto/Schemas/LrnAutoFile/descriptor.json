@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "fe7e7f53-09f0-47b8-a71a-8950230c4950",
+    "Name": "LrnAutoFile",
+    "ModifiedOnUtc": "\/Date(1664364761000)\/",
+    "Parent": {
+      "UId": "556c5867-60a7-4456-aae1-a57a122bef70",
+      "Name": "File"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Файл и ссылка объекта Автомобили"
+  }
+}

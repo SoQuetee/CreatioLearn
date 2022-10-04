@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "b7f54b13-5820-4548-80ad-a4251f6e7f86",
+    "Name": "LrnCreditFile",
+    "ModifiedOnUtc": "\/Date(1664532975000)\/",
+    "Parent": {
+      "UId": "556c5867-60a7-4456-aae1-a57a122bef70",
+      "Name": "File"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Файл и ссылка объекта Кредитные программы"
+  }
+}

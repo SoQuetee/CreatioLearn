@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "f9db231b-1064-4dcb-b6cf-64ec7b63fc60",
+    "Name": "LrnAgreement1Page",
+    "ModifiedOnUtc": "\/Date(1664889314000)\/",
+    "Parent": {
+      "UId": "d62293c0-7f14-44b1-b547-735fb40499cd",
+      "Name": "BaseModulePageV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Страница редактирования: \"Договоры\""
+  }
+}

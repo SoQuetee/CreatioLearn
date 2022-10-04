@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "a4c4d09d-75e5-495c-b7bb-f2fc6b6c1bbc",
+    "Name": "LrnCreditTag",
+    "ModifiedOnUtc": "\/Date(1664532987000)\/",
+    "Parent": {
+      "UId": "9e3f203c-e905-4de5-9468-335b193f2439",
+      "Name": "BaseTag"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Тег раздела Кредитные программы"
+  }
+}

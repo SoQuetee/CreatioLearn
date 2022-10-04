@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "a4c718e6-69e3-4b85-b324-b74d2929cbf3",
+    "Name": "LrnInvoce892dc171Section",
+    "ModifiedOnUtc": "\/Date(1664371404000)\/",
+    "Parent": {
+      "UId": "7912fb69-4fee-429f-8b23-93943c35d66d",
+      "Name": "BaseSectionV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема раздела: \"Счета\""
+  }
+}

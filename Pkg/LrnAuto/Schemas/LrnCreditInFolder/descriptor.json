@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "41a1a01a-b17e-4d80-82ba-f9a15ece2eb5",
+    "Name": "LrnCreditInFolder",
+    "ModifiedOnUtc": "\/Date(1664532983000)\/",
+    "Parent": {
+      "UId": "4f63bafb-e9e7-4082-b92e-66b97c14017c",
+      "Name": "BaseItemInFolder"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Кредитные программы в группе"
+  }
+}

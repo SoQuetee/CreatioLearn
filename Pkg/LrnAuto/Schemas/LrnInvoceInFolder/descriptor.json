@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "40a47464-e9fc-427b-9829-509d2cab7006",
+    "Name": "LrnInvoceInFolder",
+    "ModifiedOnUtc": "\/Date(1664371427000)\/",
+    "Parent": {
+      "UId": "4f63bafb-e9e7-4082-b92e-66b97c14017c",
+      "Name": "BaseItemInFolder"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Счета в группе"
+  }
+}

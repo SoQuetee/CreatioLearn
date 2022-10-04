@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "f6e78d41-0e97-486c-a37f-ac3dded01b72",
+    "Name": "LrnModel",
+    "ModifiedOnUtc": "\/Date(1664368139000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Модели автомобилей"
+  }
+}

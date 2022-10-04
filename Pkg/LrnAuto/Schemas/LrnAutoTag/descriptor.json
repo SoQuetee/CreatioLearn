@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "e7f57f16-194e-400d-ada5-e1524dc1f8a9",
+    "Name": "LrnAutoTag",
+    "ModifiedOnUtc": "\/Date(1664364774000)\/",
+    "Parent": {
+      "UId": "9e3f203c-e905-4de5-9468-335b193f2439",
+      "Name": "BaseTag"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Тег раздела Автомобили"
+  }
+}

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Договоры" />
+			<Item Name="Columns.LrnAuto.Caption" Value="Модель" />
+			<Item Name="Columns.LrnContact.Caption" Value="Контакт" />
+			<Item Name="Columns.LrnCredit.Caption" Value="Кредитная программа" />
+			<Item Name="Columns.LrnCreditAmount.Caption" Value="Сумма кредита" />
+			<Item Name="Columns.LrnCreditPeriod.Caption" Value="Срок кредита (лет)" />
+			<Item Name="Columns.LrnDate.Caption" Value="Дата договора" />
+			<Item Name="Columns.LrnFact.Caption" Value="Оплачен" />
+			<Item Name="Columns.LrnFactSumma.Caption" Value="Оплаченная сумма" />
+			<Item Name="Columns.LrnFullCreditAmount.Caption" Value="Полная стоимость кредита" />
+			<Item Name="Columns.LrnInitialFee.Caption" Value="Первоначальный взнос" />
+			<Item Name="Columns.LrnName.Caption" Value="Название" />
+			<Item Name="Columns.LrnNotes.Caption" Value="Заметки" />
+			<Item Name="Columns.LrnPaymentPlanDate.Caption" Value="Дата графика платежей" />
+			<Item Name="Columns.LrnSumma.Caption" Value="Сумма" />
+			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
+		</Items>
+	</Group>
+</Resources>
