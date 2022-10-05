@@ -8,6 +8,19 @@
 				"dependencies": [{
 					"methodName": "setLockoutStatus"
 				}]
+			},
+			"LrnAgreement": {
+				"dataValueType": Terrasoft.DataValueType.LOOKUP,
+				"lookupListConfig": {
+              		"columns": ["LrnCredit", "LrnSumma"],
+				}
+			},
+			"SetInvoiceSummaByAgreement": {
+				"dataValueType": Terrasoft.DataValueType.FLOAT,
+				"dependencies": [{
+					"columns": ["LrnAgreement"],
+					"methodName": "setInvoiceSumma"
+				}]
 			}
 		},
 		methods: {
@@ -16,13 +29,27 @@
                 this.setLockoutStatus();
             },
 			
+			onSaved: function(response, config) {
+				this.callParent(arguments);
+				this.setLockoutStatus();
+			},
+			
 			setLockoutStatus: function() {
-				var status = this.$LrnFact;
+				let status = this.$LrnFact;
 				if (status) {
 					this.$IsModelItemsEnabled = false;
 				}
-				else{
+				else {
 					this.$IsModelItemsEnabled = true;
+				}
+			},
+			
+			setInvoiceSumma: function() {
+				let agreement = this.$LrnAgreement;
+				if (typeof agreement == "object") {
+					if (!agreement.LrnCredit) {
+						this.$LrnAmount = agreement.LrnSumma;
+					}
 				}
 			}
 		},

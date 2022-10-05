@@ -44,6 +44,13 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 			}
 		},
 		attributes: {
+			"SetNewLrnName": {
+				"dataValueType": Terrasoft.DataValueType.TEXT,
+				"dependencies": [{
+					"columns": ["LrnName"],
+					"methodName": "deleteSymbols"
+				}]
+			},
 			//выключаем поля
 			"IsModelItemsEnabled": {
 				"dataValueType": Terrasoft.DataValueType.BOOLEAN,
@@ -56,8 +63,15 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 			"LrnAuto": {
 				"dataValueType": Terrasoft.DataValueType.LOOKUP,
 				"lookupListConfig": {
-              		"columns": ["LrnAmount", "LrnModel.LrnRecommendedAmount"],
+              		"columns": ["LrnUsed", "LrnAmount", "LrnModel.LrnRecommendedAmount"],
 				}
+			},
+			"SetAgreementSumma": { 
+				"dataValueType": Terrasoft.DataValueType.FLOAT,
+				"dependencies": [{
+					"columns": ["LrnAuto"],
+					"methodName": "setSummaByUsedAuto"
+				}]
 			},
 			//получить поля справочника
 			"LrnCredit": {
@@ -73,6 +87,13 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 						}
 					]
             	}
+			},
+			"LrnCreditPeriod": {
+				"dataValueType": Terrasoft.DataValueType.INTEGER,
+				"dependencies": [{
+					"columns": ["LrnCredit"],
+					"methodName": "setCreditPeriod"
+				}]
 			}
 		},
 		methods: {
@@ -88,91 +109,59 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 			
 			setValidationConfig: function() {
                 this.callParent(arguments);
-                this.addColumnValidator("LrnName", this.deleteSymbols);
 				this.addColumnValidator("LrnCredit", this.checkCreditDateEnd);
-				this.addColumnValidator("LrnAuto", this.setSummaByUsedAuto);
             },
 			
 			//фильтрация ввода пользователя в поле Название
-			deleteSymbols: function() {
-				var name = this.$LrnName;
-				if (typeof name == "string" && name.match(/[^-\d]/g)) {
-					//this.set("LrnName", this.$LrnName.replace(/[^-\d]/g, ""));
-					this.$LrnName = name.replace(/[^-\d]/g, "");
-				}
-				return {
-					invalidMessage: ""
-				};
+			deleteSymbols: async function() {
+				let name = this.$LrnName;
+				if (name && /\D/g.test(name)) {
+					this.$LrnName = await name.replace(/[^-\d]/g, "");
+				} 
 			},
+			
 			//проверка срока окончания кредитной программы
 			checkCreditDateEnd: function() {
-				var invalidMessage = "";
-				var creditData = this.$LrnCredit;
-				//спросить Станислава по этому поводу
-				if (creditData.LrnDateEnd) {
-					if (creditData.LrnDateEnd.getTime() < this.$LrnDate.getTime()) {
+				let invalidMessage = "";
+				let creditData = this.$LrnCredit;
+				let agreementData = this.$LrnDate;
+				if (creditData.LrnDateEnd && agreementData) {
+					if (creditData.LrnDateEnd.getTime() < agreementData.getTime()) {
 						invalidMessage = "Срок этой кредитной программы истек, выберите другую!";
 					}
-					//подставляем значение в кредитный период
-					this.$LrnCreditPeriod = creditData.LrnCreditPeriod;
-				}
-				else {
-					invalidMessage = "Укажите дату договора";
-					this.showInformationDialog("Укажите дату договора");
 				}
 				return {
 					invalidMessage: invalidMessage
 				};
 			},
 			
+			//подставляем значение в кредитный период
+			setCreditPeriod: function() {
+				let creditData = this.$LrnCredit;
+				this.$LrnCreditPeriod = creditData.LrnCreditPeriod;
+			},
+			
 			//установить значение поля Сумма
 			setSummaByUsedAuto: function() {
-				var autoId = this.$LrnAuto;
-				if (autoId) {
-					var esq = this.Ext.create("Terrasoft.EntitySchemaQuery", {
-    							rootSchemaName: "LrnAuto"
-							});
-					esq.addColumn("LrnModel.LrnRecommendedAmount", "ModelAmount");
-					esq.addColumn("LrnUsed");
-					esq.addColumn("LrnAmount");
-					esq.getEntity(autoId.value, function(result) {
-						if (!result.success) {
-							this.showInformationDialog("Ошибка запроса данных");
-							return;
-						}
-						if (result.entity.get("LrnUsed")) {
-							this.$LrnSumma = result.entity.get("ModelAmount");
-						}
-						else {
-							this.$LrnSumma = result.entity.get("LrnAmount");
-						}
-					}, this);
-				}
-				return {
-					invalidMessage: ""
-				};
-			},
-			/*checkUsedAuto: function() {
-				var auto = this.$LrnAuto;
-				console.log(auto);
-				if (auto != null) {
-					if (auto.LrnUsed) {
-						this.$LrnSumma = auto.LrnAmount;
+				let auto = this.$LrnAuto;
+				if (typeof auto == "object") {
+					if (auto.LrnUsed){
+						this.$LrnSumma = auto["LrnModel.LrnRecommendedAmount"];
 					}
 					else {
-						console.log(auto.LrnModel.LrnRecommendedAmount);
-						this.$LrnSumma = auto.LrnModel.LrnRecommendedAmount;
+						this.$LrnSumma = auto.LrnAmount;
 					}
 				}
-			},*/
+			},
 			
 			//логика кнопки Пересчитать кредит
 			onRecalculateCreditClick: function() {
-				var summa = this.$LrnSumma;
-				var initialFee = this.$LrnInitialFee;
-				var percent = this.$LrnCredit.LrnPercent;
-				var creditPeriod = this.$LrnCreditPeriod;
-				var creditAmount = summa - initialFee;
+				//тут не стал их проверять, тк есть проверка в методе ниже
+				let summa = this.$LrnSumma;
+				let initialFee = this.$LrnInitialFee;
+				let percent = this.$LrnCredit.LrnPercent;
+				let creditPeriod = this.$LrnCreditPeriod;
+				let creditAmount = summa - initialFee;
 				
 				this.$LrnCreditAmount = creditAmount;
 				var fullCreditAmount = (percent / 100 * creditPeriod * creditAmount) + creditAmount;
@@ -180,11 +169,12 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 				this.$LrnFullCreditAmount  = fullCreditAmount.toFixed(2);
 				
 			},
+			
 			//условия активности кнопки
 			isCreditInfoSet: function() {
-				var result = false;
-				var summa = this.$LrnSumma;
-				var initialFee = this.$LrnInitialFee;
+				let result = false;
+				let summa = this.$LrnSumma;
+				let initialFee = this.$LrnInitialFee;
 				if (summa > 0 && initialFee > 0) {
 					result = true;
 				}
