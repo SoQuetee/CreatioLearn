@@ -1,0 +1,31 @@
+﻿{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "SourceCodeSchemaManager",
+      "UId": "88326ee9-d74c-456b-83e6-e6c1daaf8ebd",
+      "A2": "LrnInvoiceEntityListener",
+      "A5": "6e980b54-1f92-4c63-947d-debf6dade694",
+      "B1": [],
+      "B2": [
+        {
+          "UId": "cb7f6f5c-b842-76d5-f217-a8160548678d",
+          "A2": "TotalAmountExceedWarning",
+          "A3": "88326ee9-d74c-456b-83e6-e6c1daaf8ebd",
+          "A4": "88326ee9-d74c-456b-83e6-e6c1daaf8ebd",
+          "A5": "6e980b54-1f92-4c63-947d-debf6dade694"
+        },
+        {
+          "UId": "eff742c4-1653-9248-89e1-02c1f9fbb8ce",
+          "A2": "DailyInvoiceLimitWarning",
+          "A3": "88326ee9-d74c-456b-83e6-e6c1daaf8ebd",
+          "A4": "88326ee9-d74c-456b-83e6-e6c1daaf8ebd",
+          "A5": "6e980b54-1f92-4c63-947d-debf6dade694"
+        }
+      ],
+      "B3": [],
+      "B6": "3b04ce17-3e92-f5c4-ca05-512c6becf08b",
+      "B8": "7.18.5.1500",
+      "HD1": "50e3acc0-26fc-4237-a095-849a1d534bd3"
+    }
+  }
+}

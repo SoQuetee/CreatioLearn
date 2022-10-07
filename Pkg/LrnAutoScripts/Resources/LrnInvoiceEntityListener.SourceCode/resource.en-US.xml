@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="События объекта Счета" />
+			<Item Name="LocalizableStrings.DailyInvoiceLimitWarning.Value" Value="На этот договор уже был создан счет с этой датой!" />
+			<Item Name="LocalizableStrings.TotalAmountExceedWarning.Value" Value="Общая оплаченная сумма превышает указанную сумму в договоре!" />
+		</Items>
+	</Group>
+</Resources>

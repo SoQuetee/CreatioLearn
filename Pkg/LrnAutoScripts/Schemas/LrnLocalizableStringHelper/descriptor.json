@@ -1,0 +1,9 @@
+﻿{
+  "Descriptor": {
+    "UId": "3dee1e2b-1385-4a86-8d70-3f06cabb5c91",
+    "Name": "LrnLocalizableStringHelper",
+    "ModifiedOnUtc": "\/Date(1665153396000)\/",
+    "ManagerName": "SourceCodeSchemaManager",
+    "Caption": "Получение локализованной строки"
+  }
+}

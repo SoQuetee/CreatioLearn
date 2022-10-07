@@ -1,0 +1,9 @@
+﻿{
+  "Descriptor": {
+    "UId": "c75f1806-c6a6-4ca9-9b8b-cba20e36541a",
+    "Name": "LrnAgreementEventListener",
+    "ModifiedOnUtc": "\/Date(1665067605000)\/",
+    "ManagerName": "SourceCodeSchemaManager",
+    "Caption": "События объекта Договор"
+  }
+}
