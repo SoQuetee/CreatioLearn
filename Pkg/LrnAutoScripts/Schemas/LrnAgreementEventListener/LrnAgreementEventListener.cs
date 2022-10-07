@@ -29,20 +29,33 @@ namespace Terrasoft.Configuration.LrnInvoiceEntityListener
                 {
                     if (entity.LrnContact.LrnDate == DateTime.MinValue)
                     {
-                        //entity.LrnContact.LrnDate = entity.LrnDate;
-
-                        var contact = new Contact(entity.UserConnection)
-                        {
-                            Id = entity.LrnContact.PrimaryColumnValue,
-                            LrnDate = entity.LrnDate
-                        };
-
-                        contact.Save(false, false);
+                        entity.LrnContact.LrnDate = entity.LrnDate;
+                        entity.LrnContact.Save();
+                        //все равно не работает
+                        //var contact = new Contact(entity.UserConnection)
+                        //{
+                        //    Id = entity.LrnContact.PrimaryColumnValue,
+                        //    LrnDate = entity.LrnDate
+                        //};
+                        //contact.Save(false, false);
                     }
                     
                 }
             }
             base.OnInserting(sender, e);
         }
+
+        //public override void OnDeleting(object sender, EntityBeforeEventArgs e)
+        //{
+        //    var entity = (LrnAgreement)sender;
+        //    if (entity.LrnContact.FetchFromDB(entity.LrnContactId))
+        //    {
+        //        if (entity.LrnContact.LrnDate != DateTime.MinValue)
+        //        {
+        //            entity.LrnContact.LrnDate = установить пустое значение
+        //        }
+        //    }
+        //    base.OnDeleting(sender, e);
+        //}
     }
 }

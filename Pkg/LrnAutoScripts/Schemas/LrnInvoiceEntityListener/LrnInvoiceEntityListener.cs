@@ -45,27 +45,30 @@ namespace Terrasoft.Configuration.LrnInvoiceEntityListener
                 if (entity.LrnFact && entity.LrnAgreement.FetchFromDB(entity.LrnAgreementId))
                 {
                     var totalAmount = entity.LrnAgreement.LrnFactSumma + entity.LrnAmount;
-                    var agreement = new LrnAgreement(entity.UserConnection)
-                    {
-                        Id = entity.LrnAgreement.PrimaryColumnValue,
 
-                    };
-                    //смена статуса в договоре на Оплачен 
-                    if (totalAmount == entity.LrnAgreement.LrnSumma)
-                    {
-                        agreement.LrnFact = true;
-                        agreement.Save(false, false);
-                    }
+                    //!не работает :( agreement.Save(false, false) - убрал
+
+                    //var agreement = new LrnAgreement(entity.UserConnection)
+                    //{
+                    //    Id = entity.LrnAgreement.PrimaryColumnValue,
+
+                    //};
+
                     //проверка, что сумма платежа не превысила суммe договора
-                    if (totalAmount < entity.LrnAgreement.LrnSumma)
+                    if (totalAmount <= entity.LrnAgreement.LrnSumma)
                     {
-                        agreement.LrnFactSumma += entity.LrnAmount;
+                        entity.LrnAgreement.LrnFactSumma += entity.LrnAmount;
                         entity.LrnDate = DateTime.Now;
-                        agreement.Save(false, false);
+                        //смена статуса в договоре на Оплачен 
+                        if (totalAmount == entity.LrnAgreement.LrnSumma)
+                        {
+                            entity.LrnAgreement.LrnFact = true;
+                        }
+                        entity.LrnAgreement.Save();
                     }
                     else
                     {
-                        var invalidMessage = LocalizableStringHelper.GetValue(entity.UserConnection, "TotalAmountExceedWarning", "DailyInvoiceLimitWarning");
+                        var invalidMessage = LocalizableStringHelper.GetValue(entity.UserConnection, "LrnInvoiceEntityListener", "TotalAmountExceedWarning");
                         //var errorMessage = LrnLocalizableStringHelper.Get<LrnInvoiceEntityListenerSchema>(entity.UserConnection, "TotalAmountExceedWarning");
                         throw new Exception(invalidMessage);
                     }
@@ -87,9 +90,14 @@ namespace Terrasoft.Configuration.LrnInvoiceEntityListener
             var entity = (LrnInvoce)sender;
             if (entity.LrnFact && entity.LrnAgreement.FetchFromDB(entity.LrnAgreementId))
             {
-                //для тестов
+                //условие для тестов
                 if (entity.LrnAgreement.LrnFactSumma > 0) {
                     entity.LrnAgreement.LrnFactSumma -= entity.LrnAmount;
+                    //снятие статуса Оплачен с договора
+                    if (entity.LrnAgreement.LrnFact)
+                    {
+                        entity.LrnAgreement.LrnFact = false;
+                    }
                     entity.LrnAgreement.Save();
                 }
             }
