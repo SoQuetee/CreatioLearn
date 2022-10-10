@@ -45,6 +45,20 @@ namespace Terrasoft.Configuration.LrnInvoiceEntityListener
             base.OnInserting(sender, e);
         }
 
+        public override void OnSaving(object sender, EntityBeforeEventArgs e)
+        {
+            var entity = (LrnAgreement)sender;
+            if(entity.LrnSumma != entity.LrnFactSumma && entity.LrnFact)
+            {
+                entity.LrnFact = false;
+            }
+            else
+            {
+                entity.LrnFact = true;
+            }
+            base.OnSaving(sender, e);
+        }
+
         //public override void OnDeleting(object sender, EntityBeforeEventArgs e)
         //{
         //    var entity = (LrnAgreement)sender;

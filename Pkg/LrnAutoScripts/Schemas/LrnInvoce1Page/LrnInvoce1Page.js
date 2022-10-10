@@ -35,13 +35,14 @@
 			},
 			
 			setLockoutStatus: function() {
-				let status = this.$LrnFact;
-				if (status) {
-					this.$IsModelItemsEnabled = false;
-				}
-				else {
-					this.$IsModelItemsEnabled = true;
-				}
+				// let status = this.$LrnFact;
+				// if (status) {
+				// 	this.$IsModelItemsEnabled = false;
+				// }
+				// else {
+				// 	this.$IsModelItemsEnabled = true;
+				// }
+				return !this.$LrnFact
 			},
 			
 			setInvoiceSumma: function() {

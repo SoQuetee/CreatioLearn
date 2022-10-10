@@ -3,9 +3,9 @@
 		entitySchemaName: "LrnCredit",
 		methods: {
 			setValidationConfig: function() {
-                this.callParent(arguments);
-                this.addColumnValidator("LrnDateEnd", this.finishDateValidator);
-            },
+				this.callParent(arguments);
+				this.addColumnValidator("LrnDateEnd", this.finishDateValidator);
+			},
 			
 			finishDateValidator: function() {
 				let invalidMessage = "";

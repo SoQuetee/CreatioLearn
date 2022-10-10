@@ -48,7 +48,7 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 				"dataValueType": Terrasoft.DataValueType.TEXT,
 				"dependencies": [{
 					"columns": ["LrnName"],
-					"methodName": "deleteSymbols"
+					"methodName": "deleteSymbolsInLrnName"
 				}]
 			},
 			//выключаем поля
@@ -108,12 +108,12 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
             },
 			
 			setValidationConfig: function() {
-                this.callParent(arguments);
+				this.callParent(arguments);
 				this.addColumnValidator("LrnCredit", this.checkCreditDateEnd);
-            },
+			},
 			
 			//фильтрация ввода пользователя в поле Название
-			deleteSymbols: async function() {
+			deleteSymbolsInLrnName: async function() {
 				let name = this.$LrnName;
 				if (name && /\D/g.test(name)) {
 					this.$LrnName = await name.replace(/[^-\d]/g, "");
@@ -125,7 +125,7 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 				let invalidMessage = "";
 				let creditData = this.$LrnCredit;
 				let agreementData = this.$LrnDate;
-				if (creditData.LrnDateEnd && agreementData) {
+				if (creditData && creditData.LrnDateEnd && agreementData) {
 					if (creditData.LrnDateEnd.getTime() < agreementData.getTime()) {
 						invalidMessage = "Срок этой кредитной программы истек, выберите другую!";
 					}
@@ -165,20 +165,19 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 				
 				this.$LrnCreditAmount = creditAmount;
 				var fullCreditAmount = (percent / 100 * creditPeriod * creditAmount) + creditAmount;
-				console.log(fullCreditAmount);
 				this.$LrnFullCreditAmount  = fullCreditAmount.toFixed(2);
 				
 			},
 			
 			//условия активности кнопки
 			isCreditInfoSet: function() {
-				let result = false;
-				let summa = this.$LrnSumma;
-				let initialFee = this.$LrnInitialFee;
-				if (summa > 0 && initialFee > 0) {
-					result = true;
-				}
-				return result;
+				// let result = false;
+				// let summa = this.$LrnSumma;
+				// let initialFee = this.$LrnInitialFee;
+				// if (summa > 0 && initialFee > 0) {
+				// 	result = true;
+				// }
+				return this.$LrnSumma > 0 && this.$LrnInitialFee > 0;
 			}
 		},
 		 diff: /**SCHEMA_DIFF*/[
