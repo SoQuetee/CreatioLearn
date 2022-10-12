@@ -1,0 +1,9 @@
+﻿{
+  "Descriptor": {
+    "UId": "16d4c0e9-b164-465f-b38f-b60a0cd3bf40",
+    "Name": "LrnAgreementExtractModel",
+    "ModifiedOnUtc": "\/Date(1665491327000)\/",
+    "ManagerName": "SourceCodeSchemaManager",
+    "Caption": "Модель для выгрузки договора"
+  }
+}

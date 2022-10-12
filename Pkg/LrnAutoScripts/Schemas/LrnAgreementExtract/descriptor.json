@@ -1,0 +1,9 @@
+﻿{
+  "Descriptor": {
+    "UId": "40ac5c88-b687-4a3b-b300-b172ef918b52",
+    "Name": "LrnAgreementExtract",
+    "ModifiedOnUtc": "\/Date(1665476561000)\/",
+    "ManagerName": "SourceCodeSchemaManager",
+    "Caption": "Выписка по договору"
+  }
+}

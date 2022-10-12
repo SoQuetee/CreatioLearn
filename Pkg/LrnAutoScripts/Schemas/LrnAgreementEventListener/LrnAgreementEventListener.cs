@@ -48,13 +48,13 @@ namespace Terrasoft.Configuration.LrnInvoiceEntityListener
         public override void OnSaving(object sender, EntityBeforeEventArgs e)
         {
             var entity = (LrnAgreement)sender;
-            if(entity.LrnSumma != entity.LrnFactSumma && entity.LrnFact)
+            if(entity.LrnSumma == entity.LrnFactSumma)
             {
-                entity.LrnFact = false;
+                entity.LrnFact = true;
             }
             else
             {
-                entity.LrnFact = true;
+                entity.LrnFact = false;
             }
             base.OnSaving(sender, e);
         }

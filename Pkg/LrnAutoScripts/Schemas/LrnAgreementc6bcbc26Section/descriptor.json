@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "03a32536-0f64-42e0-a4bb-0c8250cd6e4c",
+    "Name": "LrnAgreementc6bcbc26Section",
+    "ModifiedOnUtc": "\/Date(1665578916000)\/",
+    "Parent": {
+      "UId": "fa4c0cef-5acd-49c1-aed3-fed655748f5d",
+      "Name": "LrnAgreementc6bcbc26Section"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема раздела Договоры"
+  }
+}

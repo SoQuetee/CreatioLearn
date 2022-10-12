@@ -3,7 +3,9 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Схема раздела: &quot;Договоры&quot;" />
+			<Item Name="LocalizableStrings.AgreementExtractButton.Value" Value="Выписка по договору" />
 			<Item Name="LocalizableStrings.Caption.Value" Value="Договоры" />
+			<Item Name="LocalizableStrings.RecalculateCreditButtonCaprion.Value" Value="Пересчитать кредит" />
 		</Items>
 	</Group>
 </Resources>

@@ -1,4 +1,4 @@
-define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule) {
+define("LrnAgreement1Page", ["BusinessRuleModule", "ServiceHelper"], function(BusinessRuleModule, ServiceHelper) {
 	return {
 		entitySchemaName: "LrnAgreement",
 		rules: {
@@ -77,7 +77,7 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 			"LrnCredit": {
 				"dataValueType": Terrasoft.DataValueType.LOOKUP,
           		"lookupListConfig": {
-              		"columns": ["LrnDateEnd", "LrnCreditPeriod", "LrnModel"],
+              		"columns": ["LrnDateEnd", "LrnCreditPeriod", "LrnPercent"],
 					"filters": [
 						function() {
 							var filterGroup = Ext.create("Terrasoft.FilterGroup");
@@ -97,6 +97,9 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 			}
 		},
 		methods: {
+			/**
+			 * блокировка полей
+			 */
 			setCardLockoutStatus: function() {
 				this.set("IsModelItemsEnabled", false);
 				
@@ -112,15 +115,22 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 				this.addColumnValidator("LrnCredit", this.checkCreditDateEnd);
 			},
 			
-			//фильтрация ввода пользователя в поле Название
+			/**
+			 * фильтрация ввода пользователя в поле Название
+			 */
 			deleteSymbolsInLrnName: async function() {
 				let name = this.$LrnName;
 				if (name && /\D/g.test(name)) {
 					this.$LrnName = await name.replace(/[^-\d]/g, "");
 				} 
 			},
-			
-			//проверка срока окончания кредитной программы
+
+
+			/**
+			 * проверка срока окончания кредитной программы
+			 * @returns сообщение с ошибкой
+			 */
+
 			checkCreditDateEnd: function() {
 				let invalidMessage = "";
 				let creditData = this.$LrnCredit;
@@ -134,18 +144,22 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 					invalidMessage: invalidMessage
 				};
 			},
-			
-			//подставляем значение в кредитный период
+
+			/**
+			 * подставляем значение в кредитный период
+			 */
 			setCreditPeriod: function() {
 				let creditData = this.$LrnCredit;
 				this.$LrnCreditPeriod = creditData.LrnCreditPeriod;
 			},
-			
-			//установить значение поля Сумма
+
+			/**
+			 * установить значение поля Сумма
+			 */
 			setSummaByUsedAuto: function() {
 				let auto = this.$LrnAuto;
 				if (typeof auto == "object") {
-					if (auto.LrnUsed){
+					if (auto.LrnUsed) {
 						this.$LrnSumma = auto["LrnModel.LrnRecommendedAmount"];
 					}
 					else {
@@ -154,7 +168,9 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 				}
 			},
 			
-			//логика кнопки Пересчитать кредит
+			/** 
+			* логика кнопки Пересчитать кредит
+			*/
 			onRecalculateCreditClick: function() {
 				//тут не стал их проверять, тк есть проверка в методе ниже
 				let summa = this.$LrnSumma;
@@ -164,21 +180,50 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 				let creditAmount = summa - initialFee;
 				
 				this.$LrnCreditAmount = creditAmount;
-				var fullCreditAmount = (percent / 100 * creditPeriod * creditAmount) + creditAmount;
+				let fullCreditAmount = (percent / 100 * creditPeriod * creditAmount) + creditAmount;
 				this.$LrnFullCreditAmount  = fullCreditAmount.toFixed(2);
 				
-			},
-			
-			//условия активности кнопки
-			isCreditInfoSet: function() {
-				// let result = false;
-				// let summa = this.$LrnSumma;
-				// let initialFee = this.$LrnInitialFee;
-				// if (summa > 0 && initialFee > 0) {
-				// 	result = true;
-				// }
-				return this.$LrnSumma > 0 && this.$LrnInitialFee > 0;
 			}
+			
+			// /**
+			//  * условия активности кнопки "Пересчитать кредит"
+			//  */
+			// isCreditInfoSet: function() {
+			// 	return this.$LrnSumma > 0 && this.$LrnInitialFee > 0;
+			// },
+
+			// /**
+			//  * условия активности кнопки "Выписка по договору"
+			//  * @returns состояние активности кнопки
+			//  */
+			//  isAgreementDataSet: function() {
+			// 	return this.$LrnName && this.$LrnAuto && this.$LrnDate && this.$LrnSumma;
+			//  },
+			
+			//  /**
+			//   * обработка клика по кнопке "Выписка по договору"
+			//   */
+			//  onGetAgreementExtractClick: function() {
+			// 	let id = this.$Id;
+			// 	let serviceData = {
+			// 		agreementId: id
+			// 	};
+			// 	ServiceHelper.callService("AgreementExtract", "GetAgreementExtractFile",
+			// 	function(response) {
+			// 		let result = response.GetAgreementExtractFileResult;
+			// 		if (result) {
+			// 			let file = new File([new Uint8Array(result.FileContent)], result.FileName);
+			// 			const url = window.URL.createObjectURL(file);
+			// 			const a = document.createElement('a');
+			// 			a.style.display = "none";
+			// 			a.href = url;
+			// 			a.download = result.FileName;
+			// 			document.body.appendChild(a);
+			// 			a.click();
+			// 			window.URL.revokeObjectURL(url);
+			// 		}
+			// 	}, serviceData, this);
+			//  }
 		},
 		 diff: /**SCHEMA_DIFF*/[
             {
@@ -199,6 +244,21 @@ define("LrnAgreement1Page", ["BusinessRuleModule"], function(BusinessRuleModule)
 					"style": Terrasoft.controls.ButtonEnums.style.BLUE
                 }
             }
+			// {
+            //     "operation": "insert",
+            //     "parentName": "LeftContainer",
+            //     "propertyName": "items",
+            //     "name": "GetAgreementExtractButton", 
+			// 	"enabled": { bindTo: "getEnabled" },
+            //     "values": {
+            //         "itemType": Terrasoft.ViewItemType.BUTTON,
+            //         "caption": { bindTo: "Resources.Strings.AgreementExtractButton" },
+            //         "click": { bindTo: "onGetAgreementExtractClick" },
+            //         "enabled": { bindTo: "isAgreementDataSet" },
+            //         "layout": { "column": 1, "row": 6, "colSpan": 2, "rowSpan": 1 },
+			// 		"style": Terrasoft.controls.ButtonEnums.style.GREEN
+            //     }
+            // }
         ]/**SCHEMA_DIFF*/
 	};
 });
